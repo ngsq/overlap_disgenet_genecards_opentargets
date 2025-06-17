@@ -1,11 +1,18 @@
+# 1. Install library if not already installed then install packages
+install.packages(c("rentrez", "readr", "scales", "ggplots", "VennDiagram"))
+
+#Load library
 library(rentrez)
 library(dplyr)
 library(readr)
 library(scales)
 library(ggplot2)
 library(VennDiagram)
+
+#Set directory to directory that contains all downloaded TSV files
 getwd()
 setwd('D:/Downloads')
+
 # Read downloaded OpenTarget files
 as_data <- read_tsv("AS_OpenTarget.tsv")
 pso_data <- read_tsv("PsO_OpenTarget.tsv")
@@ -122,33 +129,6 @@ print(nrow(final_table))
 # Export to CSV
 write_csv(final_table, "shared_genes_6_scores_table.csv")
 
-# # Create a named list of gene sets
-# venn_list <- list(
-#   "Open Targets" = shared_genes,
-#   "DisGeNET" = shared_genes_1,
-#   "GeneCards" = shared_genes_2
-# )
-# 
-# # Output image
-# venn.plot <- venn.diagram(
-#   x = venn_list,
-#   category.names = c("Open Targets", "DisGeNET", "GeneCards"),
-#   filename = NULL,  # Use NULL for drawing in RStudio plot viewer
-#   output = TRUE,
-#   imagetype = "png",
-#   height = 3000,
-#   width = 3000,
-#   resolution = 500,
-#   lwd = 2,
-#   col = "black",
-#   fill = c("#E69F00", "#56B4E9", "#009E73"),
-#   cex = 1.4,
-#   cat.cex = 1.4,
-#   cat.fontface = "bold"
-# )
-# 
-# grid::grid.draw(venn.plot)
-
 library(VennDiagram)
 library(grid)
 
@@ -199,7 +179,8 @@ grid.newpage()
 grid.draw(venn.plot)
 grid.text("Overlap of Shared Genes in AS and PsO", y = unit(0.95, "npc"), gp = gpar(fontsize = 18, fontface = "bold"))
 
-
+##############################################################################################################################################################################################################
+# Step extra if you want PubMed search statistic for each genes, take extra time
 library(rentrez)
 
 # Set your email to comply with NCBI policy
