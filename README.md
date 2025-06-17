@@ -1,12 +1,12 @@
 # overlap_disgenet_genecards_opentargets
 
-# This project is to create an overlap between three databases which are DisGeNET, Gene Cards and OpenTargets to find shared genes between Ankylosing Spondylitis (AS) and Psoriasis (PsO)
+This project is to create an overlap between three databases which are DisGeNET, Gene Cards and OpenTargets to find shared genes between Ankylosing Spondylitis (AS) and Psoriasis (PsO)
 
 # Step 1: Data downloaded in form of TSV for AS and PsO separately in DisGeNET, Gene Cards and OpenTargets
 
-DisGeNET --> https://disgenet.com/ (Limited data for unsubscriber, may need to search manually WITHOUT login until certain threshold you want)
-Gene Cards --> https://www.genecards.org/ (Free)
-OpenTargets --> https://platform.opentargets.org/ (Free)
+- DisGeNET --> https://disgenet.com/ (Limited data for unsubscriber, may need to search manually WITHOUT login until certain threshold you want)
+- Gene Cards --> https://www.genecards.org/ (Free)
+- OpenTargets --> https://platform.opentargets.org/ (Free)
 
 Ensure not duplicates in every datasets
 
